@@ -29,7 +29,7 @@ list_global <- list()
 
 start <- proc.time()
 capture.output(
-  for (k in 1:100){
+  for (k in 1:10){
     print(k)
     list_global[[k]] <- update_from_survey_multiple_data_types(indexes_for_voi, index_survey = indexes_for_survey[k], data_vector, df_price, labels_array, parent_directory, number_of_cores = 6, starting_time = 5)
   }, file = file_out)
