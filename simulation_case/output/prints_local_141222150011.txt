@@ -1,0 +1,461 @@
+[1] 1
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 7"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.311"
+[1] "Current w1 = 0.311"
+                        voi price        diff
+lower_csem     0.0001888949  0.10 -0.09981111
+higher_csem    0.1257966230  0.15 -0.02420338
+lower_seismic  3.0810592795  0.60  2.48105928
+higher_seismic 1.0439478376  0.65  0.39394784
+[1] "We gather data: lower_seismic"
+[1] "Index of data_y is index = 7"
+[1] "To assimilate data we used w1 = 0.311"
+[1] "Decision is at time t = 8 is continue"
+[1] "Updated value of w1 = 0.274"
+[1] "Current w1 = 0.274"
+                      voi price        diff
+lower_csem     0.05088823  0.10 -0.04911177
+higher_csem    0.08988450  0.15 -0.06011550
+lower_seismic  1.80134533  0.60  1.20134533
+higher_seismic 1.92909784  0.65  1.27909784
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 7"
+[1] "To assimilate data we used w1 = 0.274"
+[1] "Decision is at time t = 11 is continue"
+[1] "Updated value of w1 = 0.111"
+[1] "Current w1 = 0.111"
+                        voi price       diff
+lower_csem     7.626255e-11  0.10 -0.1000000
+higher_csem    1.903008e-04  0.15 -0.1498097
+lower_seismic  1.603638e+00  0.60  1.0036379
+higher_seismic 9.952646e-01  0.65  0.3452646
+[1] "We gather data: lower_seismic"
+[1] "Index of data_y is index = 7"
+[1] "To assimilate data we used w1 = 0.111"
+[1] "Decision is at time t = 14 is continue"
+[1] "Updated value of w1 = 0.335"
+[1] "Current w1 = 0.335"
+                      voi price        diff
+lower_csem     0.18499922  0.10  0.08499922
+higher_csem    0.04362286  0.15 -0.10637714
+lower_seismic  1.53240067  0.60  0.93240067
+higher_seismic 0.19408826  0.65 -0.45591174
+[1] "We gather data: lower_seismic"
+[1] "Index of data_y is index = 7"
+[1] "To assimilate data we used w1 = 0.335"
+[1] "Decision is at time t = 17 is stop"
+[1] "Updated value of w1 = 0.955"
+[1] "We choose to stop at time step t = 17"
+[1] 2
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 13"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.071"
+[1] "Current w1 = 0.071"
+                        voi price       diff
+lower_csem     0.0000000000  0.10 -0.1000000
+higher_csem    0.0000871624  0.15 -0.1499128
+lower_seismic  0.0538817290  0.60 -0.5461183
+higher_seismic 0.8332102642  0.65  0.1832103
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 13"
+[1] "To assimilate data we used w1 = 0.071"
+[1] "Decision is at time t = 8 is continue"
+[1] "Updated value of w1 = 0.292"
+[1] "Current w1 = 0.292"
+                      voi price        diff
+lower_csem     0.00722244  0.10 -0.09277756
+higher_csem    0.26858286  0.15  0.11858286
+lower_seismic  2.19556448  0.60  1.59556448
+higher_seismic 2.64790248  0.65  1.99790248
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 13"
+[1] "To assimilate data we used w1 = 0.292"
+[1] "Decision is at time t = 11 is continue"
+[1] "Updated value of w1 = 0.485"
+[1] "Current w1 = 0.485"
+                     voi price      diff
+lower_csem     0.7540783  0.10 0.6540783
+higher_csem    2.4310902  0.15 2.2810902
+lower_seismic  1.9790287  0.60 1.3790287
+higher_seismic 1.7913512  0.65 1.1413512
+[1] "We gather data: higher_csem"
+[1] "Index of data_y is index = 13"
+[1] "To assimilate data we used w1 = 0.485"
+[1] "Decision is at time t = 14 is continue"
+[1] "Updated value of w1 = 0.001"
+[1] "Current w1 = 0.001"
+                        voi price       diff
+lower_csem     0.000000e+00  0.10 -0.1000000
+higher_csem    0.000000e+00  0.15 -0.1500000
+lower_seismic  6.771494e-08  0.60 -0.5999999
+higher_seismic 8.477366e-05  0.65 -0.6499152
+[1] "No updates at time t = 17"
+[1] "Current w1 = 0.001"
+                        voi price        diff
+lower_csem     5.098338e-09  0.10 -0.09999999
+higher_csem    7.116176e-09  0.15 -0.14999999
+lower_seismic  1.447900e-04  0.60 -0.59985521
+higher_seismic 1.033680e-02  0.65 -0.63966320
+[1] "No updates at time t = 20"
+[1] "Current w1 = 0.001"
+                        voi price       diff
+lower_csem     2.650559e-09  0.10 -0.1000000
+higher_csem    3.514438e-08  0.15 -0.1500000
+lower_seismic  4.259536e-05  0.60 -0.5999574
+higher_seismic 1.117555e-04  0.65 -0.6498882
+[1] "No updates at time t = 23"
+[1] 3
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 53"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.492"
+[1] "Current w1 = 0.492"
+                     voi price         diff
+lower_csem     0.1019688  0.10  0.001968768
+higher_csem    2.0590953  0.15  1.909095252
+lower_seismic  0.5090108  0.60 -0.090989208
+higher_seismic 3.6336350  0.65  2.983634966
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 53"
+[1] "To assimilate data we used w1 = 0.492"
+[1] "Decision is at time t = 8 is stop"
+[1] "Updated value of w1 = 0.965"
+[1] "We choose to stop at time step t = 8"
+[1] 4
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 63"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.138"
+[1] "Current w1 = 0.138"
+                        voi price       diff
+lower_csem     0.000000e+00  0.10 -0.1000000
+higher_csem    1.363624e-07  0.15 -0.1499999
+lower_seismic  1.436272e-01  0.60 -0.4563728
+higher_seismic 2.132749e-01  0.65 -0.4367251
+[1] "No updates at time t = 8"
+[1] "Current w1 = 0.138"
+                        voi price        diff
+lower_csem     6.093782e-05  0.10 -0.09993906
+higher_csem    2.407320e-03  0.15 -0.14759268
+lower_seismic  2.004711e-01  0.60 -0.39952893
+higher_seismic 1.325110e-01  0.65 -0.51748902
+[1] "No updates at time t = 11"
+[1] "Current w1 = 0.138"
+                       voi price        diff
+lower_csem     0.004375772  0.10 -0.09562423
+higher_csem    0.082492291  0.15 -0.06750771
+lower_seismic  0.058662799  0.60 -0.54133720
+higher_seismic 0.440490476  0.65 -0.20950952
+[1] "No updates at time t = 14"
+[1] "Current w1 = 0.138"
+                       voi price        diff
+lower_csem     0.008034162  0.10 -0.09196584
+higher_csem    0.025848717  0.15 -0.12415128
+lower_seismic  0.026052123  0.60 -0.57394788
+higher_seismic 0.269095719  0.65 -0.38090428
+[1] "No updates at time t = 17"
+[1] "Current w1 = 0.138"
+                       voi price        diff
+lower_csem     0.003802379  0.10 -0.09619762
+higher_csem    0.052429700  0.15 -0.09757030
+lower_seismic  0.034801836  0.60 -0.56519816
+higher_seismic 0.072536403  0.65 -0.57746360
+[1] "No updates at time t = 20"
+[1] "Current w1 = 0.138"
+                       voi price        diff
+lower_csem     0.005609221  0.10 -0.09439078
+higher_csem    0.014480557  0.15 -0.13551944
+lower_seismic  0.098454957  0.60 -0.50154504
+higher_seismic 0.043220716  0.65 -0.60677928
+[1] "No updates at time t = 23"
+[1] 5
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 102"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.336"
+[1] "Current w1 = 0.336"
+                       voi price        diff
+lower_csem     0.006070259  0.10 -0.09392974
+higher_csem    1.294582292  0.15  1.14458229
+lower_seismic  1.767235938  0.60  1.16723594
+higher_seismic 2.134698036  0.65  1.48469804
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 102"
+[1] "To assimilate data we used w1 = 0.336"
+[1] "Decision is at time t = 8 is continue"
+[1] "Updated value of w1 = 0.078"
+[1] "Current w1 = 0.078"
+                        voi price        diff
+lower_csem     0.0322462846  0.10 -0.06775372
+higher_csem    0.4870451624  0.15  0.33704516
+lower_seismic  0.0185688509  0.60 -0.58143115
+higher_seismic 0.0009150384  0.65 -0.64908496
+[1] "We gather data: higher_csem"
+[1] "Index of data_y is index = 102"
+[1] "To assimilate data we used w1 = 0.078"
+[1] "Decision is at time t = 11 is continue"
+[1] "Updated value of w1 = 0.004"
+[1] "Current w1 = 0.004"
+                      voi price       diff
+lower_csem     0.00000000  0.10 -0.1000000
+higher_csem    0.00000000  0.15 -0.1500000
+lower_seismic  0.01568378  0.60 -0.5843162
+higher_seismic 0.01977410  0.65 -0.6302259
+[1] "No updates at time t = 14"
+[1] "Current w1 = 0.004"
+                        voi price       diff
+lower_csem     0.000000e+00  0.10 -0.1000000
+higher_csem    6.217249e-14  0.15 -0.1500000
+lower_seismic  8.754719e-08  0.60 -0.5999999
+higher_seismic 2.030159e-06  0.65 -0.6499980
+[1] "No updates at time t = 17"
+[1] "Current w1 = 0.004"
+                        voi price       diff
+lower_csem     1.379874e-11  0.10 -0.1000000
+higher_csem    6.723571e-06  0.15 -0.1499933
+lower_seismic  9.607075e-03  0.60 -0.5903929
+higher_seismic 4.656790e-04  0.65 -0.6495343
+[1] "No updates at time t = 20"
+[1] "Current w1 = 0.004"
+                        voi price       diff
+lower_csem     3.802986e-06  0.10 -0.0999962
+higher_csem    2.152766e-04  0.15 -0.1497847
+lower_seismic  2.118667e-05  0.60 -0.5999788
+higher_seismic 1.714164e-05  0.65 -0.6499829
+[1] "No updates at time t = 23"
+[1] 6
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 103"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.031"
+[1] "Current w1 = 0.031"
+                      voi price       diff
+lower_csem     0.00000000  0.10 -0.1000000
+higher_csem    0.00000000  0.15 -0.1500000
+lower_seismic  0.01615398  0.60 -0.5838460
+higher_seismic 0.15043481  0.65 -0.4995652
+[1] "No updates at time t = 8"
+[1] "Current w1 = 0.031"
+                        voi price       diff
+lower_csem     9.716672e-13  0.10 -0.1000000
+higher_csem    3.964323e-05  0.15 -0.1499604
+lower_seismic  2.595117e-02  0.60 -0.5740488
+higher_seismic 3.579420e-02  0.65 -0.6142058
+[1] "No updates at time t = 11"
+[1] "Current w1 = 0.031"
+                        voi price       diff
+lower_csem     0.000000e+00  0.10 -0.1000000
+higher_csem    3.445040e-06  0.15 -0.1499966
+lower_seismic  2.539744e-03  0.60 -0.5974603
+higher_seismic 1.194981e-01  0.65 -0.5305019
+[1] "No updates at time t = 14"
+[1] "Current w1 = 0.031"
+                       voi price       diff
+lower_csem     0.000000000  0.10 -0.1000000
+higher_csem    0.004665306  0.15 -0.1453347
+lower_seismic  0.232712414  0.60 -0.3672876
+higher_seismic 0.092077928  0.65 -0.5579221
+[1] "No updates at time t = 17"
+[1] "Current w1 = 0.031"
+                        voi price        diff
+lower_csem     6.675582e-07  0.10 -0.09999933
+higher_csem    2.359129e-06  0.15 -0.14999764
+lower_seismic  3.781624e-02  0.60 -0.56218376
+higher_seismic 3.300104e-02  0.65 -0.61699896
+[1] "No updates at time t = 20"
+[1] "Current w1 = 0.031"
+                        voi price        diff
+lower_csem     1.320390e-06  0.10 -0.09999868
+higher_csem    3.705407e-06  0.15 -0.14999629
+lower_seismic  2.351139e-02  0.60 -0.57648861
+higher_seismic 1.464955e-02  0.65 -0.63535045
+[1] "No updates at time t = 23"
+[1] 7
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 107"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is stop"
+[1] "Updated value of w1 = 0.854"
+[1] "We choose to stop at time step t = 5"
+[1] 8
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 110"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.443"
+[1] "Current w1 = 0.443"
+                      voi price        diff
+lower_csem     0.00826778  0.10 -0.09173222
+higher_csem    0.70062846  0.15  0.55062846
+lower_seismic  1.71532825  0.60  1.11532825
+higher_seismic 2.77348164  0.65  2.12348164
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 110"
+[1] "To assimilate data we used w1 = 0.443"
+[1] "Decision is at time t = 8 is stop"
+[1] "Updated value of w1 = 0.574"
+[1] "We choose to stop at time step t = 8"
+[1] 9
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 124"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.272"
+[1] "Current w1 = 0.272"
+                      voi price        diff
+lower_csem     0.00000000  0.10 -0.10000000
+higher_csem    0.06951218  0.15 -0.08048782
+lower_seismic  0.17117883  0.60 -0.42882117
+higher_seismic 0.08705745  0.65 -0.56294255
+[1] "No updates at time t = 8"
+[1] "Current w1 = 0.272"
+                       voi price        diff
+lower_csem     0.003867615  0.10 -0.09613238
+higher_csem    0.035232178  0.15 -0.11476782
+lower_seismic  0.942822393  0.60  0.34282239
+higher_seismic 0.356043571  0.65 -0.29395643
+[1] "We gather data: lower_seismic"
+[1] "Index of data_y is index = 124"
+[1] "To assimilate data we used w1 = 0.272"
+[1] "Decision is at time t = 11 is continue"
+[1] "Updated value of w1 = 0.25"
+[1] "Current w1 = 0.25"
+                       voi price        diff
+lower_csem     0.001795929  0.10 -0.09820407
+higher_csem    0.004286862  0.15 -0.14571314
+lower_seismic  0.028922490  0.60 -0.57107751
+higher_seismic 1.383496540  0.65  0.73349654
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 124"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 14 is continue"
+[1] "Updated value of w1 = 0.003"
+[1] "Current w1 = 0.003"
+                        voi price        diff
+lower_csem     8.282830e-09  0.10 -0.09999999
+higher_csem    3.084955e-08  0.15 -0.14999997
+lower_seismic  8.974290e-03  0.60 -0.59102571
+higher_seismic 1.368482e-02  0.65 -0.63631518
+[1] "No updates at time t = 17"
+[1] "Current w1 = 0.003"
+                        voi price        diff
+lower_csem     1.403107e-08  0.10 -0.09999999
+higher_csem    1.980857e-08  0.15 -0.14999998
+lower_seismic  8.564670e-03  0.60 -0.59143533
+higher_seismic 8.015824e-03  0.65 -0.64198418
+[1] "No updates at time t = 20"
+[1] "Current w1 = 0.003"
+                        voi price        diff
+lower_csem     5.949666e-09  0.10 -0.09999999
+higher_csem    7.992416e-09  0.15 -0.14999999
+lower_seismic  5.409597e-08  0.60 -0.59999995
+higher_seismic 1.368271e-07  0.65 -0.64999986
+[1] "No updates at time t = 23"
+[1] 10
+[1] "Max. number of surveys: 7"
+[1] "Current w1 = 0.25"
+                     voi price        diff
+lower_csem     0.0000000  0.10 -0.10000000
+higher_csem    0.0000000  0.15 -0.15000000
+lower_seismic  0.4919825  0.60 -0.10801747
+higher_seismic 0.7236482  0.65  0.07364821
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 132"
+[1] "To assimilate data we used w1 = 0.25"
+[1] "Decision is at time t = 5 is continue"
+[1] "Updated value of w1 = 0.177"
+[1] "Current w1 = 0.177"
+                      voi price        diff
+lower_csem     0.00000000  0.10 -0.10000000
+higher_csem    0.07950153  0.15 -0.07049847
+lower_seismic  0.32683185  0.60 -0.27316815
+higher_seismic 0.89309423  0.65  0.24309423
+[1] "We gather data: higher_seismic"
+[1] "Index of data_y is index = 132"
+[1] "To assimilate data we used w1 = 0.177"
+[1] "Decision is at time t = 8 is continue"
+[1] "Updated value of w1 = 0.07"
+[1] "Current w1 = 0.07"
+                     voi price       diff
+lower_csem     0.4529082  0.10  0.3529082
+higher_csem    0.5755641  0.15  0.4255641
+lower_seismic  0.2011151  0.60 -0.3988849
+higher_seismic 0.4687888  0.65 -0.1812112
+[1] "We gather data: higher_csem"
+[1] "Index of data_y is index = 132"
+[1] "To assimilate data we used w1 = 0.07"
+[1] "Decision is at time t = 11 is stop"
+[1] "Updated value of w1 = 0.929"
+[1] "We choose to stop at time step t = 11"
