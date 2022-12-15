@@ -1,8 +1,8 @@
-parent_directory <- '/.../repository/'
+parent_directory <- '/.../geophysical_monitoring/'
 
 source_name <- paste(parent_directory, 'simulation_case/src/functions.R', sep = '')
 source(source_name)
-today <- format(Sys.time(), '%d%m%y%H%M%S')
+today <- format(Sys.time(), '%d%m%y')
 load(paste(parent_directory, 'data/cases.RData', sep = ''))
 
 indexes_for_voi <- new_partition_indexes(labels = labels_array, seed = 1234, size_of_partition = 300)
@@ -29,7 +29,7 @@ list_global <- list()
 
 start <- proc.time()
 capture.output(
-  for (k in 1:10){
+  for (k in 1:100){
     print(k)
     list_global[[k]] <- update_from_survey_multiple_data_types(indexes_for_voi, index_survey = indexes_for_survey[k], data_vector, df_price, labels_array, parent_directory, number_of_cores = 6, starting_time = 5)
   }, file = file_out)

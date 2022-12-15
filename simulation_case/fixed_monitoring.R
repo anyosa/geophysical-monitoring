@@ -1,17 +1,15 @@
-parent_dir <- '/.../code/'
+parent_directory <- '/.../geophysical_monitoring/'
 
-source_name <- paste(parent_dir, 'simulation_case/src/functions.R', sep = '')
+source_name <- paste(parent_directory, 'simulation_case/src/functions.R', sep = '')
 source(source_name)
-load(paste(parent_dir, 'data/cases.RData', sep = ''))
+load(paste(parent_directory, 'data/cases.RData', sep = ''))
 
 indexes_for_voi <- new_partition_indexes(labels = labels_array, seed = 1234, size_of_partition = 300)
 indexes_for_survey <- new_complement_indexes_balanced(labels = labels_array, indexes_for_voi, seed = 1234, size_of_partition = 100)
 
-path_out <- paste(parent_dir, 'simulation_case/output/', sep = '')
+path_out <- paste(parent_directory, 'simulation_case/output/', sep = '')
 
 today <- format(Sys.time(), '%d%m%y')
-
-parent_directory <- parent_dir
 
 ###########
 

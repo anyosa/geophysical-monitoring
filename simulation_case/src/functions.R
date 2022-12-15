@@ -8,7 +8,6 @@ select_locations_by_variance <- function(dataset, locations_to_keep){
   locs <- seq(1, length(vars))
   df_locs <- data.frame(locs = locs,
                         vars = vars)
-  #sorted <- sort(vars, decreasing = TRUE)[1:locations_to_keep]
   df_sorted <- df_locs[order(df_locs$vars, decreasing = TRUE), ]
   indexes <- (df_locs[order(df_locs$vars, decreasing = TRUE), ]$locs)[1:locations_to_keep]
   return(list(indexes = indexes, df_sorted = df_sorted))
@@ -45,11 +44,7 @@ fixed_monitoring_plan <- function(indexes_for_voi, index_survey, survey_vector, 
     print(t)
     data_s <- survey_vector[step]
     dataset <- load_realizations(data_s, t, labels_array, parent_directory)
-    #sites_csem <- ncol(dataset) - 2
     particles_set[[data_s]] <- new_select_realizations(dataset, indexes_for_voi) 
-    print(paste('length list particles=', length(particles_set)))
-    print(paste('nrow list particles=', nrow(particles_set[[data_s]])))
-    print(paste('ncol list particles=', ncol(particles_set[[data_s]])))
     survey_set[[data_s]] <- new_select_realizations(dataset, index_survey)
     if(step==1){
       w1 <- 0.25
@@ -103,7 +98,7 @@ inverse_of_matrix_R <- function(data_type, number_of_features){
     N <- number_of_features
     inv_R <- solve(c*(0.06**2)*diag(N))
   }
-  if(data_type == 'higher_seismic'){ # R0 and G
+  if(data_type == 'higher_seismic'){ 
     c <- 0.3 # variance_factor
     N <- number_of_features/2
     R0_part <- (0.06**2)*diag(N)
@@ -112,11 +107,11 @@ inverse_of_matrix_R <- function(data_type, number_of_features){
     joined_matrix <- rbind(cbind(R0_part, R0_and_G_part), cbind(R0_and_G_part, G_part))
     inv_R <- solve(c*joined_matrix)  
   }
-  if(data_type == 'lower_csem'){ #CSEM: 3 sites
-    inv_R <- solve((0.35**2)*diag(number_of_features)) #0.2
+  if(data_type == 'lower_csem'){ 
+    inv_R <- solve((0.35**2)*diag(number_of_features)) 
   }
-  if(data_type == 'higher_csem'){ #CSEM: 6 sites
-    inv_R <- solve((0.35**2)*diag(number_of_features)) #0.2
+  if(data_type == 'higher_csem'){ 
+    inv_R <- solve((0.35**2)*diag(number_of_features)) 
   }
   return (inv_R)
 }
@@ -125,14 +120,12 @@ inverse_of_matrix_R <- function(data_type, number_of_features){
 load_realizations <- function(type_of_data, t, labels_array, parent_directory){
   labels_array <- labels_array
   if(type_of_data == 'lower_csem'){
-    #path_in <- paste(parent_directory, '/data/resistivity_data/300622/', sep = '')
     path_in <- paste(parent_directory, '/data/resistivity_data/141122/', sep = '')
     file_in <- paste(path_in, 'resistivity2_time', t, '.RData', sep = '')
     load(file_in)
     dataset <- data.frame(csem = reduced_resolution_array, scenario = labels_array, index = seq(1, length(labels_array))) 
   }
   if(type_of_data == 'higher_csem'){
-    #path_in <- paste(parent_directory, '/data/resistivity_data/030322/', sep = '')
     path_in <- paste(parent_directory, '/data/resistivity_data/141122/', sep = '')
     file_in <- paste(path_in, 'resistivity9_time', t, '.RData', sep = '')
     load(file_in)
@@ -145,7 +138,7 @@ load_realizations <- function(type_of_data, t, labels_array, parent_directory){
     dataset <- data.frame(seismic = seismic_array, scenario = labels_array, index = seq(1, length(labels_array))) 
   }
   if(type_of_data == 'higher_seismic'){
-    path_in <- paste(parent_directory, '/data/seismic_data/281122/', sep = '') #generated with 
+    path_in <- paste(parent_directory, '/data/seismic_data/281122/', sep = '')
     file_in <- paste(path_in, 'R0_G_time', t, '.RData', sep = '')
     load(file_in)
     dataset <- data.frame(seismic = seismic_array, scenario = labels_array, index = seq(1, length(labels_array))) 
@@ -159,30 +152,6 @@ value_function <- function(x,a,t){
     if(x == 0 && a == 1){v=-10}
     if(x == 1 && a == 1){v=-42}
     return(v)
-}
-
-get_voi_2 <- function(particles, w1, df_vs, inv_R, t, number_of_cores){
-  get_results <- function(j){
-    p <- nrow(inv_R) 
-    probability_x <- w1 
-    data_y_j = particles[j, 1:p] 
-    df_without_j = particles[-j, ] 
-    df_phi = new_gaussian_measurement_model(data_y_j, inv_R, df_without_j) #returns n-1 weights
-    df_phi_with_weights = new_reweigh_particle_weights(df_phi, df_vs, j, particles)
-    df_u_values = new_compute_unnormalized_joint_probability(probability_x, df_phi_with_weights)
-    probability_x = new_classification_probabilities_given_y(df_u_values)$w_1
-    particle_index <- particles$index[j]
-    return(list(p_x = probability_x, index = particle_index))
-  }
-  n <- nrow(particles)
-  j <- seq(1, n)
-  numCores <- number_of_cores
-  results <- mclapply(j, get_results, mc.cores = numCores)
-  vector_p_x <- sapply(j, function(j) results[[j]]$p_x)
-  vector_index <- sapply(j, function(j) results[[j]]$index)
-  df_ev <- get_expval(vector_p_x, vector_index, t)
-  voi <- calculate_voi(df_ev, w1, df_vs)
-  return(voi)
 }
 
 value_of_information <- function(df_probabilities, t, w1, df_vs){
@@ -226,7 +195,10 @@ get_voi <- function(particles, w1, df_vs, inv_R, t, number_of_cores){
   vector_p_x <- sapply(j, function(j) results[[j]]$p_x)
   vector_index <- sapply(j, function(j) results[[j]]$index)
   df_probabilities <- data.frame(vector_p_x, vector_index)
-  
+  #vector_p_x <- sapply(j, function(j) results[[j]]$p_x)
+  #vector_index <- sapply(j, function(j) results[[j]]$index)
+  #df_ev <- get_expval(vector_p_x, vector_index, t)
+  #voi <- calculate_voi(df_ev, w1, df_vs)
   voi <- value_of_information(df_probabilities, t, w1, df_vs)
   return(voi)
 }
@@ -357,9 +329,6 @@ new_classification_probabilities_given_y <- function(df_u){
   df_scenario_1 <- df_u %>% filter(scenario == 1) 
   u_x0 <- df_scenario_0$u_values
   u_x1 <- df_scenario_1$u_values
-  
-  #u_x0 <- u_list$u_x0
-  #u_x1 <- u_list$u_x1
   total <- sum(u_x0) + sum(u_x1)
   w_0 <- sum(u_x0)/total
   w_1 <- sum(u_x1)/total
@@ -415,53 +384,19 @@ make_decision = function(t, w1){
 
 assimilate_data <- function(particles, sampled_data_y, w1, df_vs, inv_R){
     print(paste('To assimilate data we used w1 =', round(w1,3)))
-    p <- ncol(particles) - 2 # number of features nrow(inv_R)
-    probability_x <- w1 # prior of x=1
-    data_y = sampled_data_y[ , 1:p] # particles[4, 1:p] #
-    df_phi = new_gaussian_measurement_model(data_y, inv_R, particles) #returns n-1 weights
-    df_phi_with_weights = add_particle_weights(df_phi, df_vs)#, index_j = sampled_data_y$index, particles) # add_weights(df_phi)
+    p <- ncol(particles) - 2
+    probability_x <- w1 
+    data_y = sampled_data_y[ , 1:p] 
+    df_phi = new_gaussian_measurement_model(data_y, inv_R, particles) 
+    df_phi_with_weights = add_particle_weights(df_phi, df_vs)
     df_u_values = new_compute_unnormalized_joint_probability(probability_x, df_phi_with_weights)
     df_v_values = new_compute_posterior_weights(df_u_values) 
     probability_x = new_classification_probabilities_given_y(df_u_values)$w_1
     return(list(w1 = probability_x, posterior_vs = df_v_values, u_values = df_u_values))
 }
 
-
-#load_realizations <- function(type_of_data, t, labels_array, parent_directory){
-#  labels_array <- labels_array
-#  if(type_of_data == 'lower_csem'){
-#    #path_in <- paste(parent_directory, '/data/resistivity_data/300622/', sep = '')
-#    path_in <- paste(parent_directory, '/data/resistivity_data/030322/', sep = '')
-#    file_in <- paste(path_in, 'resistivity2_time', t, '.RData', sep = '')
-#    load(file_in)
-#    dataset <- data.frame(csem = reduced_resolution_array, scenario = labels_array, index = seq(1, length(labels_array))) 
-#  }
-#  if(type_of_data == 'higher_csem'){
-#    #path_in <- paste(parent_directory, '/data/resistivity_data/030322/', sep = '')
-#    path_in <- paste(parent_directory, '/data/resistivity_data/141122/', sep = '')
-#    file_in <- paste(path_in, 'resistivity3_time', t, '.RData', sep = '')
-#    load(file_in)
-#    dataset <- data.frame(csem = reduced_resolution_array, scenario = labels_array, index = seq(1, length(labels_array))) 
-#  }
-#  if(type_of_data == 'lower_seismic'){
-#    path_in <- paste(parent_directory, '/data/seismic_data/', sep = '')
-#    file_in <- paste(path_in, 'R0_time', t, '.RData', sep = '')
-#    load(file_in) 
-#    dataset <- data.frame(seismic = seismic_array, scenario = labels_array, index = seq(1, length(labels_array))) 
-#  }
-#  if(type_of_data == 'higher_seismic'){
-#    path_in <- paste(parent_directory, '/data/seismic_data/', sep = '')
-#    file_in <- paste(path_in, 'R0_G_time', t, '.RData', sep = '')
-#    load(file_in)
-#    dataset <- data.frame(seismic = seismic_array, scenario = labels_array, index = seq(1, length(labels_array))) 
-#  }
-#  return(dataset)
-#}
-
-
 compute_data_alternative <- function(results_t, df_price){
   voi <- data.frame(results_t)
-  #price <- data.frame(price_list) # from list to df
   price <- df_price
   df <- data.frame(t(rbind(voi, price)))
   colnames(df) <- c('voi', 'price')
@@ -477,7 +412,7 @@ compute_data_alternative <- function(results_t, df_price){
     difference_value <- max_diff
     voi_value <- (df %>% filter(diff == max_diff))$voi}
   return(list(chosen_data = chosen_data, difference_value = difference_value, voi_value =  voi_value))
-} # return 5 options: 4 data_types and 'none'
+} 
 
 
 update_from_survey_multiple_data_types <- function(indexes_for_voi, index_survey, data_vector, df_price, labels_array, parent_directory, number_of_cores, starting_time){
@@ -574,11 +509,9 @@ summarize_results <- function(list_global, indexes_for_survey, labels_array, sur
   df <- cbind(df_indexes, round(matrix_w, 5), matrix_surveys, vector_stop_time)
   df$binary_stop = ifelse(df$vector_stop_time>0, 1, 0)
   df$cat <- 2*df$scenario-df$binary_stop + 1
-  #df$dif = df$scenario - df$binary_stop
   results <- df %>% count(cat)
   meanings = c('0: false_positive', '1: true_negative', '2: true_positive', '3: false_negative')
   results$prop <- round(results$n/m, 4)
-  #accd <- sum(results$prop[2:3])
   return(list(meanings = meanings, summary = results, df = df))
 }
 
@@ -632,30 +565,6 @@ add_particle_weights <- function(df_phi, df_vs){
   return(df_)
 }
 
-#get_only_voi <- function(particles, w1, df_vs, inv_R, t, number_of_cores){
-#  get_results <- function(j){
-#    p <- nrow(inv_R) 
-#    probability_x <- w1 
-#    data_y_j = particles[j, 1:p] 
-#    df_without_j = particles[-j, ] 
-#    df_phi = new_gaussian_measurement_model(data_y_j, inv_R, df_without_j) #returns n-1 weights
-#    df_phi_with_weights = new_reweigh_particle_weights(df_phi, df_vs, j, particles)
-#    df_u_values = new_compute_unnormalized_joint_probability(probability_x, df_phi_with_weights)
-#    probability_x = new_classification_probabilities_given_y(df_u_values)$w_1
-#    return(list(p_x = probability_x))
-#  }
-#  n <- nrow(particles)
-#  j <- seq(1, n)
-#  numCores <- number_of_cores
-#  results <- mclapply(j, get_results, mc.cores = numCores)
-#  vector_p_x <- sapply(j, function(j) results[[j]]$p_x)
-#  vector_pov <- posterior_value(t, vector_p_x)
-#  pov <- weighted_postval(vector_pov, w1, df_vs)
-#  pv <- weighted_pv(t, vector_p_x, w1, df_vs)
-#  voi <- pov - pv
-#  return(voi)
-#}
-
 new_partition_indexes <- function(labels, seed, size_of_partition){
   df <- data.frame(scenario = labels_array,
                    index = seq(1, nrow(labels_array)))
@@ -678,7 +587,7 @@ new_complement_indexes_balanced <- function(labels, vector_of_indexes, seed, siz
   df_survey <- anti_join(df, df_voi, by = 'index')
   df_survey_0 <- df_survey %>% filter(scenario == 0)
   df_survey_1 <- df_survey %>% filter(scenario == 1)
-  size_of_sample <- as.integer(size_of_partition/2) #50
+  size_of_sample <- as.integer(size_of_partition/2) 
   set.seed(seed)
   sample_ids_0 <- sample(df_survey_0$index, size_of_sample, replace = FALSE)
   set.seed(seed)
