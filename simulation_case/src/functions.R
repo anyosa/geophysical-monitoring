@@ -121,7 +121,7 @@ load_realizations <- function(type_of_data, t, labels_array, parent_directory){
   labels_array <- labels_array
   if(type_of_data == 'lower_csem'){
     path_in <- paste(parent_directory, '/data/resistivity_data/141122/', sep = '')
-    file_in <- paste(path_in, 'resistivity2_time', t, '.RData', sep = '')
+    file_in <- paste(path_in, 'resistivity6_time', t, '.RData', sep = '')
     load(file_in)
     dataset <- data.frame(csem = reduced_resolution_array, scenario = labels_array, index = seq(1, length(labels_array))) 
   }
